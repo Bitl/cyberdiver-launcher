@@ -9,7 +9,7 @@
 using System;
 using System.Windows.Forms;
 
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	/// <summary>
 	/// Class with program entry point.

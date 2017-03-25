@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	partial class InstructionsGameForm
 	{
@@ -88,7 +88,7 @@ namespace hl2ac_launcher
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(379, 19);
 			this.label4.TabIndex = 4;
-			this.label4.Text = "To exit the game, type \"exit\" into the Debug Console window.";
+			this.label4.Text = "To exit the game, close it with Task Manager (CTRL+ALT+DELETE).";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// InstructionsGameForm
@@ -103,7 +103,7 @@ namespace hl2ac_launcher
 			this.Controls.Add(this.button1);
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.Name = "InstructionsGameForm";
-			this.Text = "Half-Life 2 Survivor Ver2.0 Launcher - Game Instructions";
+			this.Text = "CyberDiver Launcher - Game Instructions";
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label label4;

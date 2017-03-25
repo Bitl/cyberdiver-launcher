@@ -12,7 +12,7 @@ using System.Drawing;
 using System.Windows.Forms;
 using System.IO;
 
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	/// <summary>
 	/// Description of MainForm.

@@ -6,7 +6,7 @@
  * 
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	partial class InstructionsForm
 	{
@@ -162,7 +162,7 @@ namespace hl2ac_launcher
 			this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
 			this.MaximizeBox = false;
 			this.Name = "InstructionsForm";
-			this.Text = "Half-Life 2 Survivor Ver2.0 Launcher - Launcher Instructions";
+			this.Text = "CyberDiver Launcher - Launcher Instructions";
 			this.ResumeLayout(false);
 		}
 		private System.Windows.Forms.Label label9;

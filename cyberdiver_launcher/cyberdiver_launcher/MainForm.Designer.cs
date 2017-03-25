@@ -7,7 +7,7 @@
  * To change this template use Tools | Options | Coding | Edit Standard Headers.
  */
  
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	partial class MainForm
 	{
@@ -68,7 +68,7 @@ namespace hl2ac_launcher
 			// 
 			// pictureBox1
 			// 
-			this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+			this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
 			this.pictureBox1.InitialImage = null;
 			this.pictureBox1.Location = new System.Drawing.Point(20, 12);
 			this.pictureBox1.Name = "pictureBox1";

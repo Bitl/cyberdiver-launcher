@@ -10,7 +10,7 @@ using System;
 using System.Drawing;
 using System.Windows.Forms;
 
-namespace hl2ac_launcher
+namespace cyberdiver_launcher
 {
 	/// <summary>
 	/// Description of InstructionsGameForm.
