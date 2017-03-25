@@ -5,14 +5,14 @@
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>hl2ac_launcher</RootNamespace>
-    <AssemblyName>hl2ac_launcher</AssemblyName>
+    <RootNamespace>cyberdiver_launcher</RootNamespace>
+    <AssemblyName>cyberdiver_launcher</AssemblyName>
     <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
     <TargetFrameworkProfile>Client</TargetFrameworkProfile>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <ApplicationManifest>app.manifest</ApplicationManifest>
     <NoWin32Manifest>False</NoWin32Manifest>
-    <ApplicationIcon>hl2.ico</ApplicationIcon>
+    <ApplicationIcon>cyberdiver.ico</ApplicationIcon>
     <SignAssembly>False</SignAssembly>
     <DelaySign>False</DelaySign>
   </PropertyGroup>
