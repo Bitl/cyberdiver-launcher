@@ -88,7 +88,7 @@ namespace cyberdiver_launcher
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(379, 19);
 			this.label4.TabIndex = 4;
-			this.label4.Text = "To exit the game, close it with Task Manager (CTRL+ALT+DELETE).";
+			this.label4.Text = "To exit the game, close it when you are in the menu.";
 			this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// InstructionsGameForm

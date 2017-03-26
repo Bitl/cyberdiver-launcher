@@ -33,121 +33,92 @@ namespace cyberdiver_launcher
 		
 		void MainFormLoad(object sender, EventArgs e)
 		{
-			string hl2ac_version = "missingno";
+			string cyberdiver_version = "missingno";
 			
 			if (System.Diagnostics.Debugger.IsAttached)
 			{
-				hl2ac_version = "Test Version";
+				cyberdiver_version = "Test Version";
 			}
 			else
 			{
-				hl2ac_version = "1.4";
+				cyberdiver_version = "1.1";
 			}
 			
-			string hl2ac_buildnumber = Application.ProductVersion;
+			string cyberdiver_buildnumber = Application.ProductVersion;
 			
 			if (System.Diagnostics.Debugger.IsAttached)
 			{
-				if (File.Exists("hl2ac_version_debug.txt"))
+				if (File.Exists("cyberdiver_version_debug.txt"))
 				{
         			string line1;
-					using(StreamReader reader = new StreamReader("hl2ac_version_debug.txt")) 
+					using(StreamReader reader = new StreamReader("cyberdiver_version_debug.txt")) 
 					{
     					line1 = reader.ReadLine();
 					}
-					hl2ac_version = line1;
+					cyberdiver_version = line1;
 				}
 				else
 				{
-					string[] lines = { hl2ac_version };
-        			File.WriteAllLines("hl2ac_version_debug.txt", lines);
+					string[] lines = { cyberdiver_version };
+        			File.WriteAllLines("cyberdiver_version_debug.txt", lines);
         			string line1;
-					using(StreamReader reader = new StreamReader("hl2ac_version_debug.txt")) 
+					using(StreamReader reader = new StreamReader("cyberdiver_version_debug.txt")) 
 					{
     					line1 = reader.ReadLine();
 					}
-					hl2ac_version = line1;
+					cyberdiver_version = line1;
 				}
 			}
 			else
 			{
-				if (File.Exists("hl2ac_version.txt"))
+				if (File.Exists("cyberdiver_version.txt"))
 				{
 					string line1;
-					using(StreamReader reader = new StreamReader("hl2ac_version.txt")) 
+					using(StreamReader reader = new StreamReader("cyberdiver_version.txt")) 
 					{
     					line1 = reader.ReadLine();
 					}
-					hl2ac_version = line1;
+					cyberdiver_version = line1;
 				}
 				else
 				{
-					string[] lines = { hl2ac_version };
-        			File.WriteAllLines("hl2ac_version.txt", lines);
+					string[] lines = { cyberdiver_version };
+        			File.WriteAllLines("cyberdiver_version.txt", lines);
         			string line1;
-					using(StreamReader reader = new StreamReader("hl2ac_version.txt")) 
+					using(StreamReader reader = new StreamReader("cyberdiver_version.txt")) 
 					{
     					line1 = reader.ReadLine();
 					}
-					hl2ac_version = line1;
+					cyberdiver_version = line1;
 				}
 			}
 			
-			label7.Text = "Launcher Version: " + hl2ac_version;
-			label8.Text = "Build Number: " + hl2ac_buildnumber;
-			this.Text = "Half-Life 2 Survivor Ver2.0 Launcher - Version: " + hl2ac_version;
-		}
-		
-		void Button6Click(object sender, System.EventArgs e)
-		{
-			string path = Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.System), @"drivers\etc\hosts");
-            string hostsText = File.ReadAllText(path);
-            if (hostsText.Contains("bg3test.cg.taito.co.jp"))
-            {
-            	label6.Text = "You already did the host redirection!";
-            	label6.ForeColor = System.Drawing.Color.Red;
-            }
-            else
-            {
-            	StreamWriter writer = new StreamWriter(path, true);
-            	writer.Write(Environment.NewLine);
-            	writer.Write("##Survivor host redirection");
-            	writer.Write(Environment.NewLine);
-            	if (checkBox4.Checked == false)
-				{
-            		writer.Write("127.0.0.1    bg3test.cg.taito.co.jp");
-            	}
-            	else
-            	{
-            		writer.Write(textBox5.Text + "    bg3test.cg.taito.co.jp");
-            	}
-            	writer.Dispose();
-            	label6.Text = "Host redirection completed!";
-            	label6.ForeColor = System.Drawing.Color.Lime;
-            }
+			label7.Text = "Launcher Version: " + cyberdiver_version;
+			label8.Text = "Build Number: " + cyberdiver_buildnumber;
+			this.Text = "CyberDiver Launcher - Version: " + cyberdiver_version;
 		}
 		
 		void Button5Click(object sender, EventArgs e)
 		{
 			if (checkBox1.Checked == false)
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english");
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -dxlevel 90 -nesys 0");
 			}
 			else if (checkBox2.Checked == false)
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -english");
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -english -dxlevel 90 -nesys 0");
 			}
 			else if (checkBox3.Checked == false)
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english");
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -dxlevel 90 -nesys 0");
 			}
 			else if (checkBox1.Checked && checkBox2.Checked && checkBox3.Checked == false)
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -width " + textBox2.Text + " -height " + textBox3.Text + " -english");
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -width " + textBox2.Text + " -height " + textBox3.Text + " -english -dxlevel 90 -nesys 0");
 			}
 			else
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english " + textBox4.Text);
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -nesys 0 " + textBox4.Text);
 			}
 			
 			if (checkBox5.Checked == true)
@@ -186,12 +157,12 @@ namespace cyberdiver_launcher
         	{
 				ofd.Filter = "Text files (*.txt)|*.txt";
             	ofd.FilterIndex = 2;
-            	ofd.FileName = "hl2ac_config.txt";
+            	ofd.FileName = "cyberdiver_config.txt";
             	ofd.Title = "Load Configuration";
             	
             	if (ofd.ShowDialog() == DialogResult.OK)
             	{
-					string line1, line2, line3, line4, line5, line6, line7, line8, line9, line10;
+					string line1, line2, line3, line4, line5, line6, line7, line8;
 
 					using(StreamReader reader = new StreamReader(ofd.FileName)) 
 					{
@@ -203,26 +174,21 @@ namespace cyberdiver_launcher
     					line6 = reader.ReadLine();
     					line7 = reader.ReadLine();
     					line8 = reader.ReadLine();
-    					line9 = reader.ReadLine();
-    					line10 = reader.ReadLine();
 					}
 					
+					Boolean bline5 = bool.Parse(line5);
 					Boolean bline6 = bool.Parse(line6);
 					Boolean bline7 = bool.Parse(line7);
 					Boolean bline8 = bool.Parse(line8);
-					Boolean bline9 = bool.Parse(line9);
-					Boolean bline10 = bool.Parse(line10);
 			
 					textBox1.Text = line1;
 					textBox2.Text = line2;
 					textBox3.Text = line3;
 					textBox4.Text = line4;
-					textBox5.Text = line5;
-					checkBox1.Checked = bline6;
-					checkBox2.Checked = bline7;
-					checkBox3.Checked = bline8;
-					checkBox4.Checked = bline9;
-					checkBox5.Checked = bline10;
+					checkBox1.Checked = bline5;
+					checkBox2.Checked = bline6;
+					checkBox3.Checked = bline7;
+					checkBox5.Checked = bline8;
 			
 					MessageBox.Show("Configuration Loaded.");
             	}
@@ -235,28 +201,16 @@ namespace cyberdiver_launcher
         	{
             	sfd.Filter = "Text files (*.txt)|*.txt";
             	sfd.FilterIndex = 2;
-            	sfd.FileName = "hl2ac_config.txt";
+            	sfd.FileName = "cyberdiver_config.txt";
             	sfd.Title = "Save Configuration";
 
             	if (sfd.ShowDialog() == DialogResult.OK)
             	{
-                	string[] lines = { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, textBox5.Text, checkBox1.Checked.ToString(), checkBox2.Checked.ToString(), checkBox3.Checked.ToString(), checkBox4.Checked.ToString(), checkBox5.Checked.ToString() };
+                	string[] lines = { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked.ToString(), checkBox2.Checked.ToString(), checkBox3.Checked.ToString(), checkBox5.Checked.ToString() };
         			File.WriteAllLines(sfd.FileName, lines);
 					MessageBox.Show("Configuration Saved.");
             	}     
         	}
-		}
-		
-		void CheckBox4CheckedChanged(object sender, EventArgs e)
-		{
-			if (checkBox4.Checked == false)
-			{
-				textBox5.Enabled = false;
-			}
-			else
-			{
-				textBox5.Enabled = true;
-			}
 		}
 		
 		void Button3Click(object sender, EventArgs e)

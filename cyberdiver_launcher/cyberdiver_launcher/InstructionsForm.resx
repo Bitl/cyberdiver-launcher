@@ -124,7 +124,7 @@
     <value>The "Heapsize", "Width", and "Height" textboxes are used to specify the launch options. You can disable "Heapsize" by checking the "Enable Heapsize" checkbox. You can also specify your own by checking the "Enable Launch Options" checkbox and type them in.</value>
   </data>
   <data name="label7.Text" xml:space="preserve">
-    <value>You can also disable the arcade-ish menu that comes with Half-Life 2 Survivor Ver2.0 by checking the "Enable Arcade Menu" checkbox. However this very buggy and you may not be able to do some things the same as the menu, so this is suggested for advanced users only.</value>
+    <value>You can also disable the arcade-ish menu that comes with CyberDiver by checking the "Enable Arcade Menu" checkbox. However this very buggy and you may not be able to do some things the same as the menu, so this is suggested for advanced users only.</value>
   </data>
   <data name="label8.Text" xml:space="preserve">
     <value>And here is the final feature of the launcher, the "Save Configuration" and "Load Configuration buttons. You can press these to save and load configurations using the launcher. However, you will have to load your configurations when you launch the launcher again.</value>

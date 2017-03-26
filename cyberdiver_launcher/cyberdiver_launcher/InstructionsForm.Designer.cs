@@ -84,8 +84,8 @@ namespace cyberdiver_launcher
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(446, 33);
 			this.label3.TabIndex = 3;
-			this.label3.Text = "First of all, make sure you have this launcher where your Half-Life 2 Survivor Ve" +
-			"r2.0 directory is. This allows you to launch Half-Life 2 Survivor Ver2.0.";
+			this.label3.Text = "First of all, make sure you have this launcher where your CyberDiver directory is" +
+			". This allows you to launch CyberDiver.";
 			this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
 			// 
 			// label4
