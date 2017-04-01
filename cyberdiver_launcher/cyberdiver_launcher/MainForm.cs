@@ -41,7 +41,7 @@ namespace cyberdiver_launcher
 			}
 			else
 			{
-				cyberdiver_version = "1.1";
+				cyberdiver_version = "1.2";
 			}
 			
 			string cyberdiver_buildnumber = Application.ProductVersion;
@@ -96,10 +96,44 @@ namespace cyberdiver_launcher
 			label7.Text = "Launcher Version: " + cyberdiver_version;
 			label8.Text = "Build Number: " + cyberdiver_buildnumber;
 			this.Text = "CyberDiver Launcher - Version: " + cyberdiver_version;
+			
+			if (File.Exists("cyberdiver_config.txt"))
+			{
+				string config_line1, config_line2, config_line3, config_line4, config_line5, config_line6, config_line7, config_line8;
+
+				using(StreamReader reader = new StreamReader("cyberdiver_config.txt")) 
+				{
+    				config_line1 = reader.ReadLine();
+    				config_line2 = reader.ReadLine();
+    				config_line3 = reader.ReadLine();
+    				config_line4 = reader.ReadLine();
+    				config_line5 = reader.ReadLine();
+    				config_line6 = reader.ReadLine();
+    				config_line7 = reader.ReadLine();
+    				config_line8 = reader.ReadLine();
+				}
+					
+				Boolean bline5 = bool.Parse(config_line5);
+				Boolean bline6 = bool.Parse(config_line6);
+				Boolean bline7 = bool.Parse(config_line7);
+				Boolean bline8 = bool.Parse(config_line8);
+			
+				textBox1.Text = config_line1;
+				textBox2.Text = config_line2;
+				textBox3.Text = config_line3;
+				textBox4.Text = config_line4;
+				checkBox1.Checked = bline5;
+				checkBox2.Checked = bline6;
+				checkBox3.Checked = bline7;
+				checkBox5.Checked = bline8;
+			}
 		}
 		
 		void Button5Click(object sender, EventArgs e)
 		{
+			string[] lines = { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked.ToString(), checkBox2.Checked.ToString(), checkBox3.Checked.ToString(), checkBox5.Checked.ToString() };
+        	File.WriteAllLines("cyberdiver_config.txt", lines);
+			
 			if (checkBox1.Checked == false)
 			{
 				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -dxlevel 90 -nesys 0");
@@ -118,7 +152,7 @@ namespace cyberdiver_launcher
 			}
 			else
 			{
-				System.Diagnostics.Process.Start("hl2.exe", "-sw -game hl2mp -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -nesys 0 " + textBox4.Text);
+				System.Diagnostics.Process.Start("hl2.exe", "-sw -game bs09 -heapsize " + textBox1.Text + " -width " + textBox2.Text + " -height " + textBox3.Text + " -ac -english -nesys 0 " + textBox4.Text);
 			}
 			
 			if (checkBox5.Checked == true)
@@ -149,68 +183,6 @@ namespace cyberdiver_launcher
 			{
 				textBox4.Enabled = true;
 			}
-		}
-		
-		void Button1Click(object sender, EventArgs e)
-		{
-			using (var ofd = new OpenFileDialog())
-        	{
-				ofd.Filter = "Text files (*.txt)|*.txt";
-            	ofd.FilterIndex = 2;
-            	ofd.FileName = "cyberdiver_config.txt";
-            	ofd.Title = "Load Configuration";
-            	
-            	if (ofd.ShowDialog() == DialogResult.OK)
-            	{
-					string line1, line2, line3, line4, line5, line6, line7, line8;
-
-					using(StreamReader reader = new StreamReader(ofd.FileName)) 
-					{
-    					line1 = reader.ReadLine();
-    					line2 = reader.ReadLine();
-    					line3 = reader.ReadLine();
-    					line4 = reader.ReadLine();
-    					line5 = reader.ReadLine();
-    					line6 = reader.ReadLine();
-    					line7 = reader.ReadLine();
-    					line8 = reader.ReadLine();
-					}
-					
-					Boolean bline5 = bool.Parse(line5);
-					Boolean bline6 = bool.Parse(line6);
-					Boolean bline7 = bool.Parse(line7);
-					Boolean bline8 = bool.Parse(line8);
-			
-					textBox1.Text = line1;
-					textBox2.Text = line2;
-					textBox3.Text = line3;
-					textBox4.Text = line4;
-					checkBox1.Checked = bline5;
-					checkBox2.Checked = bline6;
-					checkBox3.Checked = bline7;
-					checkBox5.Checked = bline8;
-			
-					MessageBox.Show("Configuration Loaded.");
-            	}
-			}
-		}
-		
-		void Button2Click(object sender, EventArgs e)
-		{ 
-			using (var sfd = new SaveFileDialog())
-        	{
-            	sfd.Filter = "Text files (*.txt)|*.txt";
-            	sfd.FilterIndex = 2;
-            	sfd.FileName = "cyberdiver_config.txt";
-            	sfd.Title = "Save Configuration";
-
-            	if (sfd.ShowDialog() == DialogResult.OK)
-            	{
-                	string[] lines = { textBox1.Text, textBox2.Text, textBox3.Text, textBox4.Text, checkBox1.Checked.ToString(), checkBox2.Checked.ToString(), checkBox3.Checked.ToString(), checkBox5.Checked.ToString() };
-        			File.WriteAllLines(sfd.FileName, lines);
-					MessageBox.Show("Configuration Saved.");
-            	}     
-        	}
 		}
 		
 		void Button3Click(object sender, EventArgs e)
